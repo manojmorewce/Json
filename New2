@@ -1,7 +1,11 @@
 15:
 Connect MySQL and phpMyAdmin Using Docker | Docker Network Explained | by Bharathiraja | CodeX | Medium
+https://medium.com/codex/connect-mysql-and-phpmyadmin-using-docker-docker-network-explained-6025b382dd58
+
 
 Docker Compose Explained. Learn how to create a YAML file for… | by Bharathiraja | CodeX | Medium
+https://medium.com/codex/docker-compose-explained-3954baf495ec
+
 
 If we are using the YAML file, then there is no need to create the Docker network. The docker-compose tool will automatically create a network and connect the containers present in the YAML file.
 
