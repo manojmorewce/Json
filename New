@@ -1,0 +1,623 @@
+ry-management-System$ ls
+ admin.html        delete_libarian.html   Issues_book.html        research_report.css   style.css
+ admin_page.html   Dockerfile             Libarary_section.html   return_book.html      view_book.html
+ books.html        images                 Libarian_login.html     student_login.html    View_issues_book.html
+ contact.html      index.html             reasearch_report.html   student_login.zip    'view_libarian copy.html'
+
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ docker login
+Authenticating with existing credentials...
+WARNING! Your password will be stored unencrypted in /home/shubham/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ ls
+ admin.html        delete_libarian.html   Issues_book.html        research_report.css   style.css
+ admin_page.html   Dockerfile             Libarary_section.html   return_book.html      view_book.html
+ books.html        images                 Libarian_login.html     student_login.html    View_issues_book.html
+ contact.html      index.html             reasearch_report.html   student_login.zip    'view_libarian copy.html'
+
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ cd /root
+bash: cd: /root: Permission denied
+
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ docker images
+REPOSITORY                                      TAG       IMAGE ID       CREATED         SIZE
+webapp                                          latest    50798bb61355   2 minutes ago   145MB
+shubhamx12/libaray_system                       latest    20ec6a6b7899   2 weeks ago     145MB
+shubhamx12/ubuntu                               latest    ccec492d317c   2 weeks ago     826MB
+nginx                                           latest    448a08f1d2f9   2 weeks ago     142MB
+debian                                          latest    34b4fa67dc04   2 weeks ago     124MB
+ubuntu                                          latest    3b418d7b466a   3 weeks ago     77.8MB
+selenium/standalone-chrome                      latest    257fe8eb042b   4 weeks ago     1.29GB
+mysql                                           latest    8189e588b0e8   4 weeks ago     564MB
+mysql/mysql-server                              latest    1d9c2219ff69   4 months ago    496MB
+hello-world                                     latest    feb5d9fea6a5   20 months ago   13.3kB
+docker.elastic.co/elasticsearch/elasticsearch   7.14.0    e347b2b2d6c1   22 months ago   1.04GB
+docker.elastic.co/kibana/kibana                 7.14.0    58dffcbc8caa   22 months ago   1.33GB
+
+
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ docker ps -a
+CONTAINER ID   IMAGE                                                  COMMAND                  CREATED              STATUS                    PORTS                                                 NAMES
+e26b9fb5c7d7   webapp                                                 "/docker-entrypoint.…"   About a minute ago   Up About a minute         0.0.0.0:8083->80/tcp, :::8083->80/tcp                 webapp
+f0633d564e48   docker.elastic.co/elasticsearch/elasticsearch:7.14.0   "/bin/tini -- /usr/l…"   2 hours ago          Up 54 minutes             0.0.0.0:9200->9200/tcp, :::9200->9200/tcp, 9300/tcp   f0633d564e48_exp11_elasticsearch_1
+02489067700d   docker.elastic.co/kibana/kibana:7.14.0                 "/bin/tini -- /usr/l…"   2 hours ago          Up About an hour          0.0.0.0:5601->5601/tcp, :::5601->5601/tcp             exp11_kibana_1
+e2d463518494   mysql                                                  "docker-entrypoint.s…"   11 hours ago         Exited (1) 11 hours ago                                                         mysql1
+9e520af4be20   mysql                                                  "docker-entrypoint.s…"   11 hours ago         Exited (1) 11 hours ago                                                         mysql
+8909ecc7c3d9   mysql                                                  "docker-entrypoint.s…"   11 hours ago         Exited (1) 11 hours ago                                                         priceless_greider
+a5b6359ffb20   mysql                                                  "docker-entrypoint.s…"   11 hours ago         Exited (1) 11 hours ago                                                         thirsty_rhodes
+76d17c84297a   shubhamx12/libaray_system                              "/docker-entrypoint.…"   11 hours ago         Up 11 hours               0.0.0.0:8081->80/tcp, :::8081->80/tcp                 shubham_myapp2_1
+a6af44fd9b78   nginx                                                  "/docker-entrypoint.…"   12 hours ago         Exited (0) 2 hours ago                                                          shubham_myapp1_1
+
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ docker commit e26b9fb5c7d7  shubhamx12/webapp
+sha256:312ff55e5a621900421521caf30f99d644e054da9a78745ffbc8c0299eda11d4
+
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ ls
+ admin.html        delete_libarian.html   Issues_book.html        research_report.css   style.css
+ admin_page.html   Dockerfile             Libarary_section.html   return_book.html      view_book.html
+ books.html        images                 Libarian_login.html     student_login.html    View_issues_book.html
+ contact.html      index.html             reasearch_report.html   student_login.zip    'view_libarian copy.html'
+
+
+
+
+
+
+
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ docker images
+REPOSITORY                                      TAG       IMAGE ID       CREATED         SIZE
+shubhamx12/webapp                               latest    312ff55e5a62   7 seconds ago   145MB
+webapp                                          latest    50798bb61355   3 minutes ago   145MB
+shubhamx12/libaray_system                       latest    20ec6a6b7899   2 weeks ago     145MB
+shubhamx12/ubuntu                               latest    ccec492d317c   2 weeks ago     826MB
+nginx                                           latest    448a08f1d2f9   2 weeks ago     142MB
+debian                                          latest    34b4fa67dc04   2 weeks ago     124MB
+ubuntu                                          latest    3b418d7b466a   3 weeks ago     77.8MB
+selenium/standalone-chrome                      latest    257fe8eb042b   4 weeks ago     1.29GB
+mysql                                           latest    8189e588b0e8   4 weeks ago     564MB
+mysql/mysql-server                              latest    1d9c2219ff69   4 months ago    496MB
+hello-world                                     latest    feb5d9fea6a5   20 months ago   13.3kB
+docker.elastic.co/elasticsearch/elasticsearch   7.14.0    e347b2b2d6c1   22 months ago   1.04GB
+docker.elastic.co/kibana/kibana                 7.14.0    58dffcbc8caa   22 months ago   1.33GB
+
+
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ docker push shubhamx12/webapp
+Using default tag: latest
+The push refers to repository [docker.io/shubhamx12/webapp]
+0e6a9243a40d: Pushed 
+5d52f11f3797: Pushed 
+1040838fe30e: Mounted from shubhamx12/libaray_system 
+93ee76f39c97: Mounted from shubhamx12/libaray_system 
+5684be535bf1: Mounted from shubhamx12/libaray_system 
+6bc8ae8fb3cf: Mounted from shubhamx12/libaray_system 
+a29cc9587af6: Mounted from shubhamx12/libaray_system 
+8553b91047da: Mounted from shubhamx12/libaray_system 
+latest: digest: sha256:415526d79de103fbdd9b876a658d09ba621668e031c763a008736a966fb0f938 size: 1988
+
+
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ ls
+ admin.html        delete_libarian.html   Issues_book.html        research_report.css   style.css
+ admin_page.html   Dockerfile             Libarary_section.html   return_book.html      view_book.html
+ books.html        images                 Libarian_login.html     student_login.html    View_issues_book.html
+ contact.html      index.html             reasearch_report.html   student_login.zip    'view_libarian copy.html'
+
+
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ rm student_login.zip 
+
+
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ ls
+ admin.html        delete_libarian.html   Issues_book.html        research_report.css   view_book.html
+ admin_page.html   Dockerfile             Libarary_section.html   return_book.html      View_issues_book.html
+ books.html        images                 Libarian_login.html     student_login.html   'view_libarian copy.html'
+ contact.html      index.html             reasearch_report.html   style.css
+
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ ssh-keygen -t ed25519 -C "shubhammore262001@gmail.com"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/shubham/.ssh/id_ed25519): 
+/home/shubham/.ssh/id_ed25519 already exists.
+Overwrite (y/n)? n
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ ssh-add ~/.ssh/id_ed25519
+Identity added: /home/shubham/.ssh/id_ed25519 (shubhammore262001@gmail.com)
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ ssh-keygen -t ed25519-sk -C "shubhammore262001@gmail.com"
+Generating public/private ed25519-sk key pair.
+You may need to touch your authenticator to authorize key generation.
+Key enrollment failed: device not found
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git ls
+git: 'ls' is not a git command. See 'git --help'.
+
+The most similar command is
+	log
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    student_login.zip
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	Dockerfile
+
+no changes added to commit (use "git add" and/or "git commit -a")
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git add .
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   Dockerfile
+	deleted:    student_login.zip
+
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git log
+commit 7e715b3d25630a1d31ac9487ad60c664f927cb25 (HEAD -> main, origin/main, origin/HEAD)
+Author: shubhamx12 <shubhammore262001@gmail.com>
+Date:   Sun Mar 27 09:32:30 2022 -0700
+
+    First Commit
+
+commit 90a8e7823133c04466abc626071c1c3c1b3c6836
+Author: shubhamx12 <shubhammore262001@gmail.com>
+Date:   Sun Mar 27 09:13:50 2022 -0700
+
+    HTML_CSS_COMPLETE
+
+commit 2a64f2123cb946022683d0ee3762def0f910df9e
+Author: shubhamx12 <shubhammore262001@gmail.com>
+Date:   Tue Mar 22 16:20:20 2022 -0700
+
+    init
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   Dockerfile
+	deleted:    student_login.zip
+
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ nano s.html
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ ls
+ admin.html        delete_libarian.html   Issues_book.html        research_report.css   style.css
+ admin_page.html   Dockerfile             Libarary_section.html   return_book.html      view_book.html
+ books.html        images                 Libarian_login.html     s.html                View_issues_book.html
+ contact.html      index.html             reasearch_report.html   student_login.html   'view_libarian copy.html'
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   Dockerfile
+	deleted:    student_login.zip
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	s.html
+
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ index.html
+^Cshubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ gedit index.html
+^C
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ nano index.html
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   Dockerfile
+	deleted:    student_login.zip
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	s.html
+
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git add index.html
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   Dockerfile
+	modified:   index.html
+	deleted:    student_login.zip
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	s.html
+
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git add  .
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   Dockerfile
+	modified:   index.html
+	new file:   s.html
+	deleted:    student_login.zip
+
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git commit -m "New file is added.."
+[main 7b959af] New file is added..
+ 4 files changed, 5 insertions(+), 1 deletion(-)
+ create mode 100644 Dockerfile
+ create mode 100644 s.html
+ delete mode 100644 student_login.zip
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git push
+Username for 'https://github.com': shubhamx12
+Password for 'https://shubhamx12@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/ShubhamX12/Libarary-management-System.git/'
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git push
+Username for 'https://github.com': ShubhamX12
+Password for 'https://ShubhamX12@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/ShubhamX12/Libarary-management-System.git/'
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git push
+Username for 'https://github.com': ShubhamX12
+Password for 'https://ShubhamX12@github.com': 
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/ShubhamX12/Libarary-management-System.git/'
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git push
+Username for 'https://github.com': ShubhamX12
+Password for 'https://ShubhamX12@github.com': 
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 494 bytes | 494.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/ShubhamX12/Libarary-management-System.git
+   7e715b3..7b959af  main -> main
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git branch
+* main
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git branch  login_page_created
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git branch
+  login_page_created
+* main
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git checkout login_page_created
+Switched to branch 'login_page_created'
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git branch
+* login_page_created
+  main
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git status
+On branch login_page_created
+nothing to commit, working tree clean
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git pull origin main
+From https://github.com/ShubhamX12/Libarary-management-System
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> login_page_created
+
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ nano login_page.html
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git status
+On branch login_page_created
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	login_page.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git add .
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git status
+On branch login_page_created
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   login_page.html
+
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git push
+fatal: The current branch login_page_created has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin login_page_created
+
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git push origin login_page_created
+Username for 'https://github.com': ShubhamX12
+Password for 'https://ShubhamX12@github.com': 
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'login_page_created' on GitHub by visiting:
+remote:      https://github.com/ShubhamX12/Libarary-management-System/pull/new/login_page_created
+remote: 
+To https://github.com/ShubhamX12/Libarary-management-System.git
+ * [new branch]      login_page_created -> login_page_created
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git status
+On branch login_page_created
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   login_page.html
+
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git commit -m "login page is added"
+[login_page_created ff7929b] login page is added
+ 1 file changed, 32 insertions(+)
+ create mode 100644 login_page.html
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git push origin login_page_created
+Username for 'https://github.com': ShubhamX12
+Password for 'https://ShubhamX12@github.com': 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 738 bytes | 738.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ShubhamX12/Libarary-management-System.git
+   7b959af..ff7929b  login_page_created -> login_page_created
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git status
+On branch login_page_created
+nothing to commit, working tree clean
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git log
+commit ff7929b0d605d3d2f0ea91a0f32f052c2179a46d (HEAD -> login_page_created, origin/login_page_created)
+Author: Shubham Narayan More <shubhammore262001@gmail.com>
+Date:   Sun May 21 10:44:01 2023 +0530
+
+    login page is added
+
+commit 7b959af34952ee540191bd35128dae717ababffa (origin/main, origin/HEAD, main)
+Author: Shubham Narayan More <shubhammore262001@gmail.com>
+Date:   Sun May 21 10:23:50 2023 +0530
+
+    New file is added..
+
+commit 7e715b3d25630a1d31ac9487ad60c664f927cb25
+Author: shubhamx12 <shubhammore262001@gmail.com>
+Date:   Sun Mar 27 09:32:30 2022 -0700
+
+    First Commit
+
+commit 90a8e7823133c04466abc626071c1c3c1b3c6836
+Author: shubhamx12 <shubhammore262001@gmail.com>
+Date:   Sun Mar 27 09:13:50 2022 -0700
+
+    HTML_CSS_COMPLETE
+
+commit 2a64f2123cb946022683d0ee3762def0f910df9e
+Author: shubhamx12 <shubhammore262001@gmail.com>
+Date:   Tue Mar 22 16:20:20 2022 -0700
+
+    init
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git status
+On branch login_page_created
+nothing to commit, working tree clean
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git branch
+* login_page_created
+  main
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git fetch -a
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 647 bytes | 323.00 KiB/s, done.
+From https://github.com/ShubhamX12/Libarary-management-System
+ * [new branch]      SKS_2023_BUG_FIXED -> origin/SKS_2023_BUG_FIXED
+   7b959af..142c32f  main               -> origin/main
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git branch
+* login_page_created
+  main
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git checkout SKS_2023_BUG_FIXED
+Branch 'SKS_2023_BUG_FIXED' set up to track remote branch 'SKS_2023_BUG_FIXED' from 'origin'.
+Switched to a new branch 'SKS_2023_BUG_FIXED'
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git status
+On branch SKS_2023_BUG_FIXED
+Your branch is up to date with 'origin/SKS_2023_BUG_FIXED'.
+
+nothing to commit, working tree clean
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git checkout login_page_created
+Switched to branch 'login_page_created'
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git status
+On branch login_page_created
+nothing to commit, working tree clean
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ ls
+ admin.html        delete_libarian.html   Issues_book.html        reasearch_report.html   student_login.html     'view_libarian copy.html'
+ admin_page.html   Dockerfile             Libarary_section.html   research_report.css     style.css
+ books.html        images                 Libarian_login.html     return_book.html        view_book.html
+ contact.html      index.html             login_page.html         s.html                  View_issues_book.html
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ nano login.html
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ nano login_page.html
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git status
+On branch login_page_created
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   login_page.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git add .
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git commit -m "added changes"
+[login_page_created 4d40eb6] added changes
+ 1 file changed, 3 deletions(-)
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git branch
+  SKS_2023_BUG_FIXED
+* login_page_created
+  main
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git checkout SKS_2023_BUG_FIXED
+Switched to branch 'SKS_2023_BUG_FIXED'
+Your branch is up to date with 'origin/SKS_2023_BUG_FIXED'.
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git pull origin login_page_created
+From https://github.com/ShubhamX12/Libarary-management-System
+ * branch            login_page_created -> FETCH_HEAD
+Already up to date.
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git checkout login_page_created
+Switched to branch 'login_page_created'
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ ls
+ admin.html        delete_libarian.html   Issues_book.html        reasearch_report.html   student_login.html     'view_libarian copy.html'
+ admin_page.html   Dockerfile             Libarary_section.html   research_report.css     style.css
+ books.html        images                 Libarian_login.html     return_book.html        view_book.html
+ contact.html      index.html             login_page.html         s.html                  View_issues_book.html
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ nano login_page.html
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git add .
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git commit -m  "new changes is added"
+[login_page_created 90af9f2] new changes is added
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git checkout SKS_2023_BUG_FIXED
+Switched to branch 'SKS_2023_BUG_FIXED'
+Your branch is up to date with 'origin/SKS_2023_BUG_FIXED'.
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ ls
+ admin.html        delete_libarian.html   Issues_book.html        reasearch_report.html   student_login.html     'view_libarian copy.html'
+ admin_page.html   Dockerfile             Libarary_section.html   research_report.css     style.css
+ books.html        images                 Libarian_login.html     return_book.html        view_book.html
+ contact.html      index.html             login_page.html         s.html                  View_issues_book.html
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ nano login_page.html
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git merge login_page_created
+error: Your local changes to the following files would be overwritten by merge:
+	login_page.html
+Please commit your changes or stash them before you merge.
+Aborting
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git add .
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git commit -m  "new changes"
+[SKS_2023_BUG_FIXED 06ee29d] new changes
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git merge login_page_created
+Auto-merging login_page.html
+CONFLICT (content): Merge conflict in login_page.html
+Automatic merge failed; fix conflicts and then commit the result.
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ nano login_page.html
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git status
+On branch SKS_2023_BUG_FIXED
+Your branch is ahead of 'origin/SKS_2023_BUG_FIXED' by 1 commit.
+  (use "git push" to publish your local commits)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   login_page.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git add .
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git commit -m "Conflict resolved"
+[SKS_2023_BUG_FIXED bfd63bb] Conflict resolved
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git push origin SKS_2023_BUG_FIXED
+Username for 'https://github.com': ShubhamX12
+Password for 'https://ShubhamX12@github.com': 
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (10/10), 1011 bytes | 1011.00 KiB/s, done.
+Total 10 (delta 7), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (7/7), completed with 2 local objects.
+To https://github.com/ShubhamX12/Libarary-management-System.git
+   142c32f..bfd63bb  SKS_2023_BUG_FIXED -> SKS_2023_BUG_FIXED
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git status
+On branch SKS_2023_BUG_FIXED
+Your branch is up to date with 'origin/SKS_2023_BUG_FIXED'.
+
+nothing to commit, working tree clean
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ nano login_page.html
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git status
+On branch SKS_2023_BUG_FIXED
+Your branch is up to date with 'origin/SKS_2023_BUG_FIXED'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   login_page.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git add .
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git commit -m "commit revert"
+[SKS_2023_BUG_FIXED 71af8e8] commit revert
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git log
+commit 71af8e8010c553685a8047ff06b5eb58c5ea5072 (HEAD -> SKS_2023_BUG_FIXED)
+Author: Shubham Narayan More <shubhammore262001@gmail.com>
+Date:   Sun May 21 11:05:00 2023 +0530
+
+    commit revert
+
+commit bfd63bb363fa0a65b83baddfd4c6e0f31e3bbe56 (origin/SKS_2023_BUG_FIXED)
+Merge: 06ee29d 90af9f2
+Author: Shubham Narayan More <shubhammore262001@gmail.com>
+Date:   Sun May 21 11:02:00 2023 +0530
+
+    Conflict resolved
+
+commit 06ee29dca6e60d18f2339eab5d133a9684e4ac4b
+Author: Shubham Narayan More <shubhammore262001@gmail.com>
+Date:   Sun May 21 10:58:27 2023 +0530
+
+    new changes
+
+commit 90af9f2caecca2ad1a0467d182398f2799e24472 (login_page_created)
+Author: Shubham Narayan More <shubhammore262001@gmail.com>
+Date:   Sun May 21 10:56:34 2023 +0530
+
+    new changes is added
+
+commit 4d40eb656a182626555f902552fd620b09e25edb
+Author: Shubham Narayan More <shubhammore262001@gmail.com>
+Date:   Sun May 21 10:52:18 2023 +0530
+
+    added changes
+
+commit 142c32f17de1484919f9fd4b2150cfbb7f049259 (origin/main, origin/HEAD)
+Merge: 7b959af ff7929b
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git commit --amend
+[SKS_2023_BUG_FIXED 50c994c] Revert commit
+ Date: Sun May 21 11:05:00 2023 +0530
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git status
+On branch SKS_2023_BUG_FIXED
+Your branch is ahead of 'origin/SKS_2023_BUG_FIXED' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ git log
+commit 50c994c4ff8a380873bae493e4bdafcbb9b9eb6d (HEAD -> SKS_2023_BUG_FIXED)
+Author: Shubham Narayan More <shubhammore262001@gmail.com>
+commit 50c994c4ff8a380873bae493e4bdafcbb9b9eb6d (HEAD -> SKS_2023_BUG_FIXED)
+Author: Shubham Narayan More <shubhammore262001@gmail.com>
+Date:   Sun May 21 11:05:00 2023 +0530
+
+    Revert commit
+
+commit bfd63bb363fa0a65b83baddfd4c6e0f31e3bbe56 (origin/SKS_2023_BUG_FIXED)
+Merge: 06ee29d 90af9f2
+Author: Shubham Narayan More <shubhammore262001@gmail.com>
+Date:   Sun May 21 11:02:00 2023 +0530
+
+    Conflict resolved
+
+commit 06ee29dca6e60d18f2339eab5d133a9684e4ac4b
+Author: Shubham Narayan More <shubhammore262001@gmail.com>
+Date:   Sun May 21 10:58:27 2023 +0530
+
+    new changes
+
+commit 90af9f2caecca2ad1a0467d182398f2799e24472 (login_page_created)
+Author: Shubham Narayan More <shubhammore262001@gmail.com>
+Date:   Sun May 21 10:56:34 2023 +0530
+
+    new changes is added
+
+commit 4d40eb656a182626555f902552fd620b09e25edb
+Author: Shubham Narayan More <shubhammore262001@gmail.com>
+Date:   Sun May 21 10:52:18 2023 +0530
+
+    added changes
+
+commit 142c32f17de1484919f9fd4b2150cfbb7f049259 (origin/main, origin/HEAD)
+Merge: 7b959af ff7929b
+shubham@shubham-Inspiron-3521:~/Project/Libarary-management-System$ ^C
