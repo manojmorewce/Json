@@ -1,0 +1,33 @@
+docker run -d -p 3307:3306 \
+    -e MYSQL_ROOT_PASSWORD=password \
+    --name mysqldb \
+    --net mysql-network \
+    mysql
+
+
+docker run -d -p 8082:80 \
+    -e PMA_HOST=mysqldb \
+    --name phpmyadmin \
+    --net mysql-network \
+    phpmyadmin:5.1-apache
+
+
+
+or   
+
+
+#version of docker compose
+version: '3'
+services:
+  mysqldb:
+    image: mysql
+    ports:
+      - 3307:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+  phpmyadmin:
+    image: phpmyadmin:5.1-apache
+    ports:
+      - 8082:80
+    environment:
+      - PMA_HOST=mysqldb
